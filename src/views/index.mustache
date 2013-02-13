@@ -1,0 +1,13 @@
+<h1>Recently shortened links</h1>
+
+<table>
+  {{#urls}}
+    <tr>
+      <td id="alias"><a href="{{path}}">{{alias}}</a></td>
+      <td><a href="{{path}}">{{path}}</a></td>
+    </tr>
+  {{/urls}}
+  {{^urls}}
+    <a href="/new">create one</a>
+  {{/urls}}
+</table>

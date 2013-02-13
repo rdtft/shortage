@@ -1,0 +1,10 @@
+<h1>Paste a url to shorten it</h1>
+
+<form action="/create" method="post">
+  <input type="text" name="url">
+  <input type="submit" value="make it shorter!">
+
+  {{#errors}}
+    <div class="error">{{error}}</div>
+  {{/errors}}
+</form>
