@@ -6,8 +6,8 @@ You can see demo [here](http://shortage-451.herokuapp.com)
 ### Quick Start
 
     CL-USER> (ql:quickload :shortage)
-    CL-USER> (shortage:create-url-tagle)
-    CL-USER> (paster:paster-start)
+    CL-USER> (shortage:create-url-table)
+    CL-USER> (shortage:start-server)
 
 ### What libraries are used
 
