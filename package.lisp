@@ -7,7 +7,7 @@
   (:import-from #:cl-fad
                 #:file-exists-p
                 #:pathname-as-file)
-  (:export #:start-server
-           #:stop-server
+  (:export #:start-http-server
+           #:stop-http-server
            #:create-url-table
            #:drop-url-table))

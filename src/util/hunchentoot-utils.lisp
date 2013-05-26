@@ -1,15 +1,18 @@
 (in-package :shortage)
 
-(defvar *ht-server*)
+(defparameter *htoot-server* nil)
+(defparameter *htoot-port* 5000)
 
-(defun start-server ()
-    (setf *ht-server*
-	  (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 5000))))
+(defun start-http-server ()
+  (when *htoot-server*
+    (hunchentoot:stop *htoot-server*))
+  (setf *htoot-server* (make-instance 'hunchentoot:easy-acceptor :port *htoot-port*))
+  (hunchentoot:start *htoot-server*))
 
-(defun stop-server ()
-  (progn
-    (hunchentoot:stop *ht-server*)
-    (setf *ht-server* nil)))
+(defun stop-http-server ()
+  (when *htoot-server*
+    (hunchentoot:stop *htoot-server*)
+    (setf *htoot-server* nil)))
 
 (defun return-404 ()
-    (setf (hunchentoot:return-code*) hunchentoot:+http-not-found+))
+  (setf (hunchentoot:return-code*) hunchentoot:+http-not-found+))
