@@ -6,8 +6,9 @@ You can see demo [here](http://shortage-451.herokuapp.com)
 ### Quick Start
 
     CL-USER> (ql:quickload :shortage)
+    CL-USER> (defvar db-params '("database" "user" "password" "host"))
     CL-USER> (shortage:create-url-table)
-    CL-USER> (shortage:start-server)
+    CL-USER> (shortage:start-http-server)
 
 ### What libraries are used
 
